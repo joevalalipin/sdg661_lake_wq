@@ -1,0 +1,48 @@
+shinyUI(
+  fluidPage(
+  
+  titlePanel("SDG 6.6.1 lake water quality"),
+  
+  tabsetPanel(type = "tabs",
+              tabPanel("Annual percentage",
+                       sidebarLayout(sidebarPanel(sliderInput("year",
+                                                              "Year:",
+                                                              min = 2017,
+                                                              max = 2021,
+                                                              value = 2021),
+                                                  radioButtons("value",
+                                                               "Value:",
+                                                               choices = c("low",
+                                                                           "medium",
+                                                                           "high",
+                                                                           "extreme"),
+                                                               selected = "medium"),
+                                                  radioButtons("parameter",
+                                                               "Parameter:",
+                                                               choices = c("Trophic state",
+                                                                           "Turbidity"),
+                                                               selected = "Trophic state")),
+                                     mainPanel(leafletOutput("annual_percent_map",
+                                                             height = 900)))),
+              tabPanel("Monthly percentage",
+                       sidebarLayout(sidebarPanel(dateInput("month",
+                                                            "Month:",
+                                                            min = ymd("2017-01-01"),
+                                                            max = ymd("2021-12-31"),
+                                                            value = ymd("2021-12-01")),
+                                                  radioButtons("value_m",
+                                                               "Value:",
+                                                               choices = c("low",
+                                                                           "medium",
+                                                                           "high",
+                                                                           "extreme"),
+                                                               selected = "medium"),
+                                                  radioButtons("parameter_m",
+                                                               "Parameter:",
+                                                               choices = c("Trophic state",
+                                                                           "Turbidity"),
+                                                               selected = "Trophic state")),
+                                     mainPanel(leafletOutput("month_percent_map")))))
+  )
+)
+  

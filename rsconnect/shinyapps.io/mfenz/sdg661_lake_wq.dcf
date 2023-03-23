@@ -1,0 +1,14 @@
+name: sdg661_lake_wq
+title: sdg661_lake_wq
+username:
+account: mfenz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8640373
+bundleId: 6997051
+url: https://mfenz.shinyapps.io/sdg661_lake_wq/
+when: 1679564803.04132
+lastSyncTime: 1679564803.04133
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: prep_data.R
